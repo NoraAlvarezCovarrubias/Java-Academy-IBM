@@ -37,7 +37,6 @@ public class Theatre {
 				message="Asiento ya esta reservado";
 			}
 		} else {
-			System.out.println("NO es un asiento valido");
 			message= "Asiento invalido ";
 			return message;
 		}
