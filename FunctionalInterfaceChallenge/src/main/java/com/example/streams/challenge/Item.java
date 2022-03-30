@@ -1,5 +1,7 @@
 package com.example.streams.challenge;
 
+import java.util.Objects;
+
 public class Item {
 	private int id;
 	private String name;
@@ -40,5 +42,26 @@ public class Item {
 		return "Item [id=" + id + ", name=" + name + ", description=" + description + ", manufacturer=" + manufacturer
 				+ ", price=" + price + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(description, id, manufacturer, name, price);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Item other = (Item) obj;
+		return Objects.equals(description, other.description) && id == other.id
+				&& Objects.equals(manufacturer, other.manufacturer) && Objects.equals(name, other.name)
+				&& price == other.price;
+	}
+	
+	
 
 }

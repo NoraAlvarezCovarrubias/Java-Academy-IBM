@@ -20,6 +20,7 @@ public class Streams {
 //		System.out.println(Streams.getManufacturerList(items));
 //		System.out.println(Streams.addAllPrices(items));
 //		System.out.println(Streams.getManufacturerStartS(items));
+		System.out.println(Streams.getChepeastProduct(items, 12000));
 
 	}
 	
@@ -54,5 +55,10 @@ public class Streams {
 		  .map(i -> i.getManufacturer()).distinct()
 		  .collect(Collectors.toList());
 	}
+	
+	public static List<Item> getChepeastProduct(List<Item> products, int price) {
+	    return products.stream().filter(i -> i.getPrice() <= price).collect(Collectors.toList());
+		//return products.stream().map(i -> i.getPrice()).filter(n -> n <= price).collect(Collectors.toList());
+	  }
 
 }

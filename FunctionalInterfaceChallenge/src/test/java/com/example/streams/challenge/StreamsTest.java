@@ -50,5 +50,18 @@ class StreamsTest {
 		manu.add("Sony");
 		assertEquals(manu, Streams.getManufacturerStartS(items));
 	}
+	
+	@Test
+    void getChepeastProductTest() {
+    List<Item> compare = new ArrayList<>();
+    Collections.addAll(compare,            
+    		new Item(101,"Smart TV", "Pantalla 50 pulg", "Samsung",7000),
+    		new Item(401,"Celular", "Redmi 9", "Xiaomi",12000)
+        );
+	/*List<Integer> price= new ArrayList<>();
+	Collections.addAll(price, 7000,12000);*/
+    
+    assertEquals(compare, Streams.getChepeastProduct(items, 13000));
+  }
 
 }
