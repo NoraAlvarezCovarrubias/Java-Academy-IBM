@@ -1,1 +1,4 @@
 /.metadata/
+*.class
+*.bin
+PatronesDiseño/.DS_Store
